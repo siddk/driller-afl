@@ -139,6 +139,7 @@ static u32 queued_paths,              /* Total number of queued testcases */
            useless_at_start,          /* Number of useless starting paths */
            current_entry,             /* Current queue entry ID           */
            persist_count = 0,         /* Counter for Sidd Files           */
+           PERSIST_CAP = 5000,        /* Persist Cap for Sidd Files       */
            havoc_div = 1;             /* Cycle count divisor for havoc    */
 
 static u64 total_crashes,             /* Total number of crashes          */
@@ -2321,6 +2322,10 @@ static void write_to_testcase(void* mem, u32 len) {
   if (persist_fd < 0) PFATAL("Unable to create '%s'", persist_file);
   ck_write(persist_fd, mem, len, persist_file);
   close(persist_fd);
+
+  if (persist_count > PERSIST_CAP) {
+    persist_count = 0;
+  }
   /* END - Persist all Inputs Logic */
 
   if (!out_file) {

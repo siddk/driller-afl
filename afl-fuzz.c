@@ -7638,7 +7638,7 @@ int main(int argc, char** argv) {
 
   doc_path = access(DOC_PATH, F_OK) ? "docs" : DOC_PATH;
 
-  while ((opt = getopt(argc, argv, "+i:o:D:Ef:m:t:T:dnCB:S:M:x:Q:a")) > 0)
+  while ((opt = getopt(argc, argv, "+i:o:a:D:Ef:m:t:T:dnCB:S:M:x:Q")) > 0)
 
     switch (opt) {
 

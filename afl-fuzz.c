@@ -5929,10 +5929,10 @@ havoc_stage:
 
     u32 use_stacking = 1 << (1 + UR(HAVOC_STACK_POW2));
     // SIDD START
-    if (havoc_n_mode == -2) {
+    if (havoc_n_mode == 21) {
         use_stacking = 1 << (1 + UR(5));
     }
-    else if (havoc_n_mode == -1) {
+    else if (havoc_n_mode == 22) {
         use_stacking = 1 << (6 + UR(5));
     }
     else if (havoc_n_mode == 1) {
@@ -7644,8 +7644,7 @@ int main(int argc, char** argv) {
       // SIDD START
       case 'a':
         SAYF("Entering case 'a'!\n");
-        fprintf(optarg);
-        if (sscanf(optarg, "%d", &havoc_n_mode) < 1)
+        if (sscanf(optarg, "%u", &havoc_n_mode) < 1)
             FATAL("Bad syntax used for -a");
       break;
       // SIDD END

@@ -7643,6 +7643,8 @@ int main(int argc, char** argv) {
 
       // SIDD START
       case 'a':
+        SAYF("Entering case 'a'!\n");
+        fprintf("Optarg: %s\n", optarg);
         if (sscanf(optarg, "%d", &havoc_n_mode) < 1)
             FATAL("Bad syntax used for -a");
         break;

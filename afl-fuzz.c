@@ -5974,7 +5974,7 @@ havoc_stage:
 
       switch (UR(92 + ((extras_cnt + a_extras_cnt) ? 2 : 0))) {
 
-        case 0 ... 50:
+        case 51 ... 53:
 
           /* Flip a single bit somewhere. Spooky! */
 
@@ -5985,7 +5985,7 @@ havoc_stage:
           // SIDD END
           break;
 
-        case 51 ... 53:
+        case 0 ... 50:
 
           /* Set byte to interesting value. */
 

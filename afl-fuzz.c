@@ -5996,7 +5996,7 @@ havoc_stage:
           // SIDD END
           break;
 
-       case 0 ... 50:
+        case 57 ... 59:
 
           /* Set word to interesting value, randomly choosing endian. */
 
@@ -6020,7 +6020,7 @@ havoc_stage:
 
           break;
 
-        case 57 ... 59:
+        case 0 ... 50:
 
           /* Set dword to interesting value, randomly choosing endian. */
 
